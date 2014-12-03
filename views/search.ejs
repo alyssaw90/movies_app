@@ -1,0 +1,9 @@
+<% include header %>
+
+<% for(var i = 0; i < Search.length; i++) { %>
+	<ol><a href="<%= Search[i].imdbID %>"><%= Search[i].Title %>
+	<%= Search[i].Year %></a></ol>
+<% } %>
+	
+
+<% include footer %>

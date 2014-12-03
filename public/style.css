@@ -1,0 +1,31 @@
+.jumbotron{
+	background-color: #8c4646;
+	color: black;
+}
+
+body {
+	background-color: #d96459;
+}
+
+.btn {
+	background-color: #588c7e;
+	color: black;
+}
+
+.btn:hover {
+	background-color: #f2e394;
+}
+
+a {
+	color: black;
+}
+
+h2 {
+	color: black;
+}
+
+.list-group-item {
+	background-color: #f2ae72;
+	font-size: 16px;
+	color: black;
+}
