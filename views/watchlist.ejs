@@ -1,0 +1,12 @@
+<% include header %>
+
+<h3>Watch List</h3>
+
+<% list.forEach(function(item) {%>
+<ol>
+<li><a href="<%= item.imdb_code %>"><%= item.movie_title%> (<%= item.year%>)</li>
+
+</ol>
+<% }) %>
+
+<% include footer %>

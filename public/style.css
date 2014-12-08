@@ -1,10 +1,15 @@
 .jumbotron{
 	background-color: #8c4646;
-	color: black;
+	color: black; 
 }
 
 body {
 	background-color: #d96459;
+}
+
+li {
+	display: inline;
+	margin: 10px;
 }
 
 .btn {
@@ -29,3 +34,4 @@ h2 {
 	font-size: 16px;
 	color: black;
 }
+
