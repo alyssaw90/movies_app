@@ -47,6 +47,13 @@ app.post("/watchlist", function(req, res){
 	})
 });	
 
+app.delete("/watchlist/:id", function(req, res){
+	db.Movie.find({where:{id: req.params.id}}).then(function(deleteCount){
+		deleteCount.destroy().success(function(){
+			res.send({deleted: deleteCount});
+		})
+	})
+});
 
 app.get("/:imdbID", function(req, res){
 	var id = req.params.imdbID

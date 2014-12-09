@@ -3,10 +3,14 @@
 <h3>Watch List</h3>
 
 <% list.forEach(function(item) {%>
+<div class="watchlistItem">
 <ol>
 <li><a href="<%= item.imdb_code %>"><%= item.movie_title%> (<%= item.year%>)</li>
 
 </ol>
+
+<a href="#" type="submit" class="delete" data-id="<%= item.id %>">Delete<a>
+</div>
 <% }) %>
 
 <% include footer %>
