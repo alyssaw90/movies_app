@@ -60,6 +60,7 @@ app.get("/comment", function(req, res){
 
 })
 
+//Comment page for each movie
 app.get("/watchlist/:id/comment", function(req, res){
 	db.comment.find({where: {id: req.params.id}}).spread(function(commentdata, created){
 		// res.send({commentdata:commentdata, created:created})
@@ -67,8 +68,9 @@ app.get("/watchlist/:id/comment", function(req, res){
 	})
 })
 
+//Posting to comment page
 app.post("/comment/save", function(req, res){
-	db.comment.findOrCreate({where: {text:commentdata.text}}).spread(function(commentdata, created){
+	db.comment.findOrCreate({where: {text:text}}).spread(function(commentdata, created){
 		// res.send({commentdata:commentdata, created:created})
 		res.redirect("comment")
 	})

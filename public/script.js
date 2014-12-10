@@ -17,6 +17,7 @@ $('.delete').on('click', function(event){
 		})
 	})
 
+//ADD BUTTON
 $(".addButton").on("click", function(event){
 		alert("Hello")
 		var theButton = $(this);
