@@ -4,13 +4,13 @@
 	<h2>Movie Information</h2>
 		<ul class="list-group">
   			<li class="list-group-item"><strong>Title:</strong> <%=Title%></li>
-  			<li class="list-group-item"><strong>Year:</strong> <%=Year %></li>
+  			<li class="list-group-item"><strong>Year:</strong> <%=Year%></li>
   			<li class="list-group-item"><strong>Genre:</strong> <%=Genre%></li>
   			<li class="list-group-item"><strong>Actors:</strong> <%=Actors%></li>
 		</ul>
 		
 	</div>
-
+	
 <button class="addButton" type="submit" data-movie_title="<%=Title%>" data-imdb="<%=imdbID%>" data-year="<%=Year%>">Add to Watchlist</button>
 <input type="hidden" name="imdb_code" value="<%=imdbID%>">
 <input type="hidden" name="title" value="<%=Title%>">

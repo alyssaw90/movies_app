@@ -2,12 +2,12 @@
 
 module.exports = function(sequelize, DataTypes) {
   var comment = sequelize.define("comment", {
-    moviesId: DataTypes.INTEGER,
+    movieId: DataTypes.INTEGER,
     text: DataTypes.TEXT
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        models.comment.belongsTo(models.movie)
       }
     }
   });

@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      moviesId: {
+      movieId: {
         type: DataTypes.INTEGER
       },
       text: {
