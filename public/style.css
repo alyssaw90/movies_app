@@ -35,3 +35,6 @@ h2 {
 	color: black;
 }
 
+.deleteButton {
+	display: inherit;
+}

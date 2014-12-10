@@ -4,12 +4,12 @@
 
 <% list.forEach(function(item) {%>
 <div class="watchlistItem">
-<ol>
-<li><a href="<%= item.imdb_code %>"><%= item.movie_title%> (<%= item.year%>)</li>
-
-</ol>
-
-<a href="#" type="submit" class="delete" data-id="<%= item.id %>">Delete<a>
+	<ol>
+		<li><a href="<%= item.imdb_code %>"><%= item.movie_title%> (<%= item.year%>)</a></li>
+	</ol>
+	<div class="deleteButton">
+		<a href="#" type="submit" class="delete" data-id="<%= item.id %>">Delete</a>
+	</div>
 </div>
 <% }) %>
 
