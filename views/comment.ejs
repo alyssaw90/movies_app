@@ -1,16 +1,17 @@
 <% include header %>
 
 <% for(var i=0; i<commentdata.length; i++) {%>
+	<ol>
 	<li>
-		<%= commentdata[i].comment%>
-		<%= commentdata[i].movieId %>
+		<%= commentdata[i].text%>
 	</li>
+	</ol>
 <% } %>
 
 
 <form role="form" class="resluts commentform" action="/watchlist/comment/save" method="post">
-	<input type="text-area" class="text" name="content">
-	<input type="submit" class="btn" name="button" value="Comment!">
+	<input type="text-area" class="text" name="text">
+	<input type="submit" class="btn" value="Comment!">
 	<input type="hidden" name="movieId" value="<%= movie_id%>">
 </form>
 

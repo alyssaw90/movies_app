@@ -62,12 +62,12 @@ app.get("/watchlist/:id/comment", function(req, res){
 
 //Posting to comment page
 app.post("/watchlist/comment/save", function(req, res){
-	res.send(req.body);
+	// res.send(req.body);
 	db.comment.findOrCreate({where:req.body}).spread(function(data, created){
 			res.redirect("/watchlist/"+req.body.movieId+"/comment");
-			res.send({data:data.content});
+			// res.send({data:data.content});
 		}).catch(function(error){
-			res.send({error:error.errors[0]})
+			res.send({error:error})
 		})
 	
 })
