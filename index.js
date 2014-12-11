@@ -51,36 +51,26 @@ app.post("/watchlist", function(req, res){
 	})
 });
 
-// Comment page
-app.get("/comment", function(req, res){
-	var addedComments = req.query.addedComments || false;
-	db.comment.findAll().then(function(data){
-		res.render("comment", {'commentlist': data})
-	})
-
-})
-
 //Comment page for each movie
 app.get("/watchlist/:id/comment", function(req, res){
-	db.comment.find({where: {id: req.params.id}}).spread(function(commentdata, created){
+	var movie_id = req.params.id
+	db.comment.findAll({where: {movieId:req.params.id}}).then(function(commentdata){
 		// res.send({commentdata:commentdata, created:created})
-		res.render("comment")
+		res.render("comment",{commentdata:commentdata,movie_id:movie_id})
 	})
 })
 
 //Posting to comment page
-app.post("/comment/save", function(req, res){
-	db.comment.findOrCreate({where: {text:text}}).spread(function(commentdata, created){
-		// res.send({commentdata:commentdata, created:created})
-		res.redirect("comment")
-	})
+app.post("/watchlist/comment/save", function(req, res){
+	res.send(req.body);
+	db.comment.findOrCreate({where:req.body}).spread(function(data, created){
+			res.redirect("/watchlist/"+req.body.movieId+"/comment");
+			res.send({data:data.content});
+		}).catch(function(error){
+			res.send({error:error.errors[0]})
+		})
+	
 })
-
-// app.post("/watchlist", function(req, res){
-// 	db.Movie.findOrCreate({where: {imdb_code:req.body.imdb_code, movie_title:req.body.movie_title, year:req.body.year}}).done(function(err, data, created){
-// 		res.redirect("watchlist")
-// 	})
-// });	
 
 //Delete button
 app.delete("/watchlist/:id", function(req, res){
@@ -98,16 +88,6 @@ app.get("/:imdbID", function(req, res){
 	request(url, function(error, response, body){
 		if (!error && response.statusCode == 200) {
 			var info = JSON.parse(body);
-			/* 
-			Used in disabling
-
-			db.Movie.find({where:{imdb_code:imdbID}}).then(function(foundItemCount){
-				var wasFound = foundItemCount > 0;
-				res.render("movieinfo", {movieFound:wasFound, item:info})
-			}) 
-
-
-			*/
 			// res.send(info)
 			res.render("movieinfo", info)
 		} else {

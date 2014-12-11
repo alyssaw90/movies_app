@@ -1,9 +1,19 @@
 <% include header %>
 
-<form action="/comment" method="post">
-	<input type="text-area" class="text">
-	<input type="submit">
+<% for(var i=0; i<commentdata.length; i++) {%>
+	<li>
+		<%= commentdata[i].comment%>
+		<%= commentdata[i].movieId %>
+	</li>
+<% } %>
+
+
+<form role="form" class="resluts commentform" action="/watchlist/comment/save" method="post">
+	<input type="text-area" class="text" name="content">
+	<input type="submit" class="btn" name="button" value="Comment!">
+	<input type="hidden" name="movieId" value="<%= movie_id%>">
 </form>
+
 
 
 <% include footer %>
