@@ -1,5 +1,12 @@
 <% include header %>
 
+<form role="form" class="resluts commentform" action="/watchlist/comment/save" method="post">
+	<input type="text-area" class="text" name="text">
+	<input type="submit" class="btn" value="Comment!">
+	<input type="hidden" name="movieId" value="<%= movie_id%>">
+</form>
+
+
 <% for(var i=0; i<commentdata.length; i++) {%>
 	<ol>
 	<li>
@@ -7,14 +14,6 @@
 	</li>
 	</ol>
 <% } %>
-
-
-<form role="form" class="resluts commentform" action="/watchlist/comment/save" method="post">
-	<input type="text-area" class="text" name="text">
-	<input type="submit" class="btn" value="Comment!">
-	<input type="hidden" name="movieId" value="<%= movie_id%>">
-</form>
-
 
 
 <% include footer %>

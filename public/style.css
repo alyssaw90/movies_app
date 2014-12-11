@@ -3,10 +3,6 @@
 	color: black; 
 }
 
-body {
-	background-color: #d96459;
-}
-
 li {
 	display: inline;
 	margin: 10px;
@@ -37,4 +33,8 @@ h2 {
 
 .deleteButton {
 	display: inherit;
+}
+
+.watchlistItem {
+	background-color: #d96459;
 }

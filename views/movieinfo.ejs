@@ -2,6 +2,7 @@
 <div class="text-center">
 	<div class="col-md-6">
 	<h2>Movie Information</h2>
+	<button class="addButton" type="submit" data-movie_title="<%=Title%>" data-imdb="<%=imdbID%>" data-year="<%=Year%>">Add to Watchlist</button>
 		<ul class="list-group">
   			<li class="list-group-item"><strong>Title:</strong> <%=Title%></li>
   			<li class="list-group-item"><strong>Year:</strong> <%=Year%></li>
@@ -11,7 +12,7 @@
 		
 	</div>
 	
-<button class="addButton" type="submit" data-movie_title="<%=Title%>" data-imdb="<%=imdbID%>" data-year="<%=Year%>">Add to Watchlist</button>
+
 <input type="hidden" name="imdb_code" value="<%=imdbID%>">
 <input type="hidden" name="title" value="<%=Title%>">
 <input type="hidden" name="year" value="<%=Year%>">

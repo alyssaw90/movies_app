@@ -1,17 +1,16 @@
 <% include header %>
-
 <h3>Watch List</h3>
 
 <% list.forEach(function(item) {%>
 <div class="watchlistItem">
 	<ol>
-		<li><a href="<%= item.imdb_code %>"><%= item.movie_title%> (<%= item.year%>)</a></li>
+		<li class="col-md-6"><a href="<%= item.imdb_code %>"><%= item.movie_title%> (<%= item.year%>)</a></li>
 	</ol>
-	<div class="deleteButton">
+	<div class="deleteButton col-md-1">
 		<a href="#" type="submit" class="delete" data-id="<%= item.id %>">Delete</a>
 	</div>
 
-	<div class="commentButton">
+	<div class="commentButton col-md-1">
 		<a href="/watchlist/<%=item.id%>/comment" type="submit" class="comment">Comment</a>
 	</div>
 </div>
